@@ -6,14 +6,14 @@ const tmi = require('tmi.js');
 const fs = require('fs');
 const commandList = new Map();
 
+//binary search t
 const BST = require('./BST.js');
 const Node = require('./BST.js');
 const bst = new BST();
 
+//populates a binary search tree with bttvEmotes
 let bttvEmotesFile = fs.readFileSync('bttvEmotes.json');
 let bttvEmotes = JSON.parse(bttvEmotesFile);
-
-//populates a binary search tree with bttvEmotes
 bttvEmotes.forEach(function(emote) {bst.add(emote.emoteName);});
 
 //fills command list using files in command folder
@@ -61,14 +61,16 @@ client.on('message', async (channel, tags, message, self) => {
         const [raw, command, argument] = message.match(regexpCommand);
     
         //checks if existing command was entered
-        if (command === 'count') {
-            commandList.get(command).execute(client, channel, tags.username, node.getData());
+        if (command === 'attendance') {
+            client.say(channel, commandList.get(command).execute(tags.username));
+        } else if (command === 'count') {
+            client.say(channel, commandList.get(command).execute(tags.username, node.getData()));
         } else if (command === 'dn') {
-            commandList.get(command).execute(client, channel, argument);
+            client.say(channel, commandList.get(command).execute(argument));
+        } else if (command === 'fortune') {
+            client.say(channel, commandList.get(command).execute(fs, tags.username));
         } else if (command === 'song') {
             commandList.get(command).execute(client, channel, tags.username);
-        } else if (command === 'fortune') {
-            commandList.get(command).execute(fs, tags.username);
         }
     }
 });

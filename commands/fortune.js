@@ -42,6 +42,6 @@ module.exports = {
             fs.writeFileSync("TmpTest.txt", "");
         })
 
-        //client.say(channel, (opening[randomVariable1] + ` @${args} ` + fortune[randomVariable2] + '. ' + ending[randomVariable3]));
+        return (opening[randomVariable1] + ` @${args} ` + fortune[randomVariable2] + '. ' + ending[randomVariable3]);
     }
 }

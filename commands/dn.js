@@ -1,7 +1,7 @@
 module.exports = {
     name: "dn",
     description: "DN TROLLFACE",
-    execute(client, channel, targetUsername) {
+    execute(targetUsername) {
         var dnJokes = [
             'DeezNuts',
             'Dune your mom',
@@ -12,6 +12,6 @@ module.exports = {
 
         let randomVariable = Math.floor(Math.random() * dnJokes.length);
 
-        client.say(channel, `/me @${targetUsername} ` + dnJokes[randomVariable] + ' TrollFace');
+        return `/me @${targetUsername} ` + dnJokes[randomVariable] + ' TrollFace';
     }
 }

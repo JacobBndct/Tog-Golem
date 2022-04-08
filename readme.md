@@ -1,6 +1,8 @@
 dependancies
-- Timer.js
-- SpotifyAPI-JS
+- dotenv
+- spotify-api.js
+- timer.js
+- tmi.js
 
 information
 credit
@@ -11,6 +13,7 @@ Known Bugs:
 
 TODO:
 - File Structure / Refactoring
+- Major spotify refactoring
 - Detect events such as sub or follow
     - https://dev.twitch.tv/docs/eventsub/handling-webhook-events#simple-nodejs-example
 - Make tree balanced
