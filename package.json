@@ -1,0 +1,17 @@
+{
+  "name": "tog-bot",
+  "version": "1.0.0",
+  "description": "Poggors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ME >:)",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "spotify-api.js": "^9.0.3",
+    "timer.js": "^1.0.4",
+    "tmi.js": "^1.8.5"
+  }
+}
